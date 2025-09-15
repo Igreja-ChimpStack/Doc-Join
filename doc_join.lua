@@ -4,7 +4,7 @@ function add_file(table,filepath)
    local extension = path.get_extension()
    print("Joining file: " .. filepath, " with extension: " .. extension)
    local content = "- file:".. filepath .. "\n"
-    content = "~~~" .. extension .. "\n"
+    content = content .. "~~~" .. extension .. "\n"
 
     content = content .. dtw.load_file(filepath)
      content = content .. "\n~~~\n"
