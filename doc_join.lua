@@ -3,14 +3,12 @@ function add_file(table,filepath)
    local path = dtw.newPath(filepath)
    local extension = path.get_extension()
    print("Joining file: " .. filepath, " with extension: " .. extension)
-   local content = ""
-   if extension ~= "md" then 
+   local content = "- file:".. filepath .. "\n"
     content = "~~~" .. extension .. "\n"
-   end 
-   content = content .. dtw.load_file(filepath)
-   if extension ~= "md" then 
+
+    content = content .. dtw.load_file(filepath)
      content = content .. "\n~~~\n"
-    end
+    
     table[#table + 1] = content
 end 
 
