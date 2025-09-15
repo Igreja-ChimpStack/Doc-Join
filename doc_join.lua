@@ -14,12 +14,12 @@ function add_file(table,filepath)
     table[#table + 1] = content
 end 
 
-local entries_size = argv.get_flag_size({ "entries" })
+local entries_size = argv.get_flag_size({ "entries","e" })
 if entries_size == 0 then
     print("No entries provided. Use --entries to specify files or directories.")
     return
 end
-local output_file = argv.get_flag_arg({ "output" },1)
+local output_file = argv.get_flag_arg({ "output" ,"o"},1)
 if not output_file then
     print("No output file specified. Use --output to specify the output file.")
     return
