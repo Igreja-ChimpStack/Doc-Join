@@ -29,7 +29,7 @@ curl -L https://github.com/OUIsolutions/VibeScript/releases/download/0.35.0/amal
 
 ### Step 2: Install Doc-Join
 ```bash
-vibescript add_script --file https://github.com/Igreja-ChimpStack/Doc-Join/releases/download/0.1.0/doc_join.lua doc_join
+vibescript add_script --file https://github.com/Igreja-ChimpStack/Doc-Join/releases/download/0.2.0/doc_join.lua doc_join
 ```
 
 ## Usage
