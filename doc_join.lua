@@ -7,16 +7,22 @@ function add_file(table,filepath)
 end
 
 local entries_size = argv.get_flag_size({ "entries" })
-local entries = argv.get_flag_arg_by_index({ "entries" }, index)
+if entries_size == 0 then
+    print("No entries provided. Use --entries to specify files or directories.")
+    return
+end
+
 local content = {}
 for i = 1,entries_size do
-     if dtw.isfile(entries[i]) then
-            add_file(content, entries[i])
-     end
-     if dtw.isdir(entries[i]) then
-          local files = dtw.list_files_recursively(entries[i])
-            for j = 1,#files do
-                add_file(content, files[j])
-            end
-     end
+    local entry = argv.get_flag_arg_by_index({ "entries" }, i)
+
+    if dtw.isfile(entry) then
+        add_file(content, entry)
+    end
+    if dtw.isdir(entry) then
+        local files = dtw.list_files_recursively(entry)
+        for j = 1,#files do
+            add_file(content, files[j])
+        end
+    end
 end 
