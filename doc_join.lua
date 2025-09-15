@@ -19,7 +19,7 @@ if entries_size == 0 then
     print("No entries provided. Use --entries to specify files or directories.")
     return
 end
-local output_file = argv.get_flag_arg({ "output" ,"o"},1)
+local output_file = argv.get_flag_arg_by_index({ "output" ,"o"},1)
 if not output_file then
     print("No output file specified. Use --output to specify the output file.")
     return
