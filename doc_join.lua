@@ -32,7 +32,7 @@ for i = 1,entries_size do
         add_file(content, entry)
     end
     if dtw.isdir(entry) then
-        local files = dtw.list_files_recursively(entry)
+        local files = dtw.list_files_recursively(entry,true)
         for j = 1,#files do
             add_file(content, files[j])
         end
